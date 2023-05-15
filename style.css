@@ -1,0 +1,65 @@
+body {
+  background-color: rgb(249, 249, 249);
+  transition: 2s;
+}
+.container {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.checkbox,
+.circle,
+.line {
+  transition: 2s;
+}
+.checkbox {
+  width: 200px;
+  height: 200px;
+  appearance: none;
+  box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+    10px 10px 15px rgba(70, 70, 70, 0.12);
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+}
+.checkbox:checked ~ .main .circle {
+  border: 5px solid #15e38a;
+}
+.checkbox:checked ~ .main .line {
+  background-color: #15e38a;
+}
+.main {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  pointer-events: none;
+}
+.circle {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  background-color: transparent;
+  border: 5px solid #7a7a7a;
+  border-radius: 50%;
+  clip-path: polygon(
+    50% 50%,
+    65% 0%,
+    100% 0%,
+    100% 100%,
+    0% 100%,
+    0% 0%,
+    35% 0%
+  );
+}
+.line {
+  width: 8px;
+  height: 40px;
+  position: absolute;
+  left: 50%;
+  top: -10px;
+  border-radius: 5px;
+  background-color: #7a7a7a;
+}
